@@ -12,6 +12,7 @@ const Home = () => {
     const [selectedSeat, setSelectedSeat] = useState("")
     const [isLoading, setIsLoading] = useState(true)
 
+    // on load retrieves all seats' details 
     useEffect(() => {
         findAllSeats()
     }, [])
@@ -31,6 +32,7 @@ const Home = () => {
         <div className="home">
             <div className="loader" hidden={isLoading}></div>
             <div className="overlay" hidden={isLoading}></div>
+            {/* screen is split into 2 - left for seat selection and right for submitting a reservation */}
             <div className="split left">
                 <div className="container">
                     <div className="screen"></div>

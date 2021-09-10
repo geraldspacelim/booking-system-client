@@ -6,22 +6,26 @@ const SeatList = ({seats, findAllSeats, setSelectedSeat}) => {
     const [isSelected, setIsSelected] = useState("")
 
     const selectSeat = (seat) => {
+        // if seat is already taken, users are unable to select the seat
         if (seat[2]) {
             alert("Seat is already taken!")
             return
         } 
+        // whenever a user selects a seat, system will check for seat availablity 
         checkSeatStatus(seat[1]) 
     }
 
     function checkSeatStatus(id) {
         axios.get(` https://ocbc-booking-system-springboot.herokuapp.com/api/v1/isBooked/${id}`)
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 if (res.status == 200) {
                     if (res.data.data) {
                         alert(`Seat ${id} is already taken`)
+                        // is seat is taken, update status of all seats
                         findAllSeats()
                     } else {
+                        // if seat is empty, set the seat to selected colour 
                         setSelectedSeat(id)
                         setIsSelected(id)
                     }

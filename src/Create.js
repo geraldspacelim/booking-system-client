@@ -2,16 +2,16 @@ import axios from "axios";
 import { useState } from "react";
 import './index.css';
 
-
-
 const Create = ({selectedSeat, findAllSeats, setSelectedSeat, setIsLoading}) => 
 {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
 
+    // submit a completed form 
     const handleSubmit = (e) => {
         e.preventDefault()
+        // checks if a seat is being selected 
         if (selectedSeat == "") {
             alert("Please select a seat")
             return
@@ -22,6 +22,7 @@ const Create = ({selectedSeat, findAllSeats, setSelectedSeat, setIsLoading}) =>
             email: email, 
             seat_number: selectedSeat
         }
+        // loading creates an overlay to prevent users from spam submitting the form
         setIsLoading(false)
         axios.put(" https://ocbc-booking-system-springboot.herokuapp.com/api/v1/bookSeat", booking)
             .then(res => {
@@ -38,6 +39,7 @@ const Create = ({selectedSeat, findAllSeats, setSelectedSeat, setIsLoading}) =>
             })
     }
 
+    // sends a confirmation email once a booking is confirmed
     function sendConfirmationEmail(booking) {
         axios.post(" https://ocbc-booking-system-springboot.herokuapp.com/api/v1/sendConfirmationEmail", booking)
             .then(res => {
@@ -55,6 +57,7 @@ const Create = ({selectedSeat, findAllSeats, setSelectedSeat, setIsLoading}) =>
             })
     }
 
+    // form checks for empty field
     return (
         <div className="create">
             <h2>Book a seat</h2>
