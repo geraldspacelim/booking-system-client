@@ -14,7 +14,7 @@ const SeatList = ({seats, findAllSeats, setSelectedSeat}) => {
     }
 
     function checkSeatStatus(id) {
-        axios.get(`http://localhost:8001/api/v1/isBooked/${id}`)
+        axios.get(` https://ocbc-booking-system-springboot.herokuapp.com/api/v1/isBooked/${id}`)
             .then(res => {
                 console.log(res)
                 if (res.status == 200) {

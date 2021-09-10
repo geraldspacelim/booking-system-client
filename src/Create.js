@@ -23,7 +23,7 @@ const Create = ({selectedSeat, findAllSeats, setSelectedSeat, setIsLoading}) =>
             seat_number: selectedSeat
         }
         setIsLoading(false)
-        axios.put("http://localhost:8001/api/v1/bookSeat", booking)
+        axios.put(" https://ocbc-booking-system-springboot.herokuapp.com/api/v1/bookSeat", booking)
             .then(res => {
                 if (res.status == 200) {
                     sendConfirmationEmail(booking)                 
@@ -39,7 +39,7 @@ const Create = ({selectedSeat, findAllSeats, setSelectedSeat, setIsLoading}) =>
     }
 
     function sendConfirmationEmail(booking) {
-        axios.post("http://localhost:8001/api/v1/sendConfirmationEmail", booking)
+        axios.post(" https://ocbc-booking-system-springboot.herokuapp.com/api/v1/sendConfirmationEmail", booking)
             .then(res => {
                 if (res.status = 200) {
                     alert(`Booking Successful! ${res.data.message}`)

@@ -17,7 +17,7 @@ const Home = () => {
     }, [])
 
     function findAllSeats() {
-        axios.get(`http://localhost:8001/api/v1/findAllSeats`)
+        axios.get(` https://ocbc-booking-system-springboot.herokuapp.com/api/v1/findAllSeats`)
         .then(res => {
             if(res.status == 200) {
                 setSeats(res.data)
