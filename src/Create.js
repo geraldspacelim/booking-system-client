@@ -29,8 +29,9 @@ const Create = ({selectedSeat, findAllSeats, setSelectedSeat, setIsLoading}) =>
                     sendConfirmationEmail(booking)                 
                 } 
             }).catch(err => {
-                if (err.response.status == 409) {
+                if (err.response.status == 409 || err.response.status == 400) {
                     alert(err.response.data.message)
+                    setIsLoading(true)
                     setSelectedSeat("")
                     findAllSeats()
                 }
@@ -41,8 +42,8 @@ const Create = ({selectedSeat, findAllSeats, setSelectedSeat, setIsLoading}) =>
         axios.post("http://localhost:8001/api/v1/sendConfirmationEmail", booking)
             .then(res => {
                 if (res.status = 200) {
-                    setIsLoading(true)
                     alert(`Booking Successful! ${res.data.message}`)
+                    setIsLoading(true)
                     setSelectedSeat("")
                     setFirstName("")
                     setLastName("")
