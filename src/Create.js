@@ -24,7 +24,7 @@ const Create = ({selectedSeat, findAllSeats, setSelectedSeat, setIsLoading}) =>
         }
         // loading creates an overlay to prevent users from spam submitting the form
         setIsLoading(false)
-        axios.put(" https://ocbc-booking-system-springboot.herokuapp.com/api/v1/bookSeat", booking)
+        axios.put("http://209.97.175.18:8001/api/v1/bookSeat", booking)
             .then(res => {
                 if (res.status == 200) {
                     sendConfirmationEmail(booking)                 
@@ -41,7 +41,7 @@ const Create = ({selectedSeat, findAllSeats, setSelectedSeat, setIsLoading}) =>
 
     // sends a confirmation email once a booking is confirmed
     function sendConfirmationEmail(booking) {
-        axios.post(" https://ocbc-booking-system-springboot.herokuapp.com/api/v1/sendConfirmationEmail", booking)
+        axios.post("http://209.97.175.18:8001/api/v1/sendConfirmationEmail", booking)
             .then(res => {
                 if (res.status = 200) {
                     alert(`Booking Successful! ${res.data.message}`)
