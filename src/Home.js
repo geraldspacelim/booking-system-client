@@ -18,7 +18,7 @@ const Home = () => {
     }, [])
 
     function findAllSeats() {
-        axios.get(`http://209.97.175.18:8001/api/v1/findAllSeats`)
+        axios.get(`http://209.97.175.18:8001/api/v1/findAllSeats/`)
         .then(res => {
             if(res.status == 200) {
                 setSeats(res.data)
