@@ -31,7 +31,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 4. If a seat is available, the user will be asked for their first name, last name and email in a form 
 5. Upon successful submission of the form, the user will be notified of their sucessful reservation via email
 6. Disabling multiple form submission  
-8. The web application is capable of handling sequential and concurrent scenarios during form submission 
+7. The web application is capable of handling sequential and concurrent scenarios during form submission 
 
 ## Possible improvements 
 
