@@ -2,7 +2,7 @@
 
 The Booking System web application is the final assignment of HACK-IT! At OCBC. It is a full stack application built using React (Frontend) and Spring Boot (Backend) accompanied with a MYSQL database. Since the focus of this asssignment is on the robustness of the entire application, styling of the web application is minimise. 
 
-The frontend application is built using React Hooks and ES6 JS as much as possible. For write-up on backend, visit [https://github.com/geraldspacelim/booking-system-backend](here).
+The frontend application is built using React Hooks and ES6 JS as much as possible. For write-up on backend, visit [here](https://github.com/geraldspacelim/booking-system-backend).
 
 ## Available Scripts
 
