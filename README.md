@@ -26,7 +26,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ## Features 
 
 1. Display all the seats in a theatre in grid view (including their statuses)
-2. Allows user to click on an empty seat and the seat number is being relfected  
+2. Allows user to click on an empty seat and the seat number is being reflected  
 3. If user clicks on a seat that has already been booked (reflected and not reflected), the web application will prompt an error
 4. If a seat is available, the user will be asked for their first name, last name and email in a form 
 5. Upon successful submission of the form, the user will be notified of their sucessful reservation via email
