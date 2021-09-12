@@ -10,7 +10,9 @@ To view the live site, click [here](http://209.97.175.18/)
 
 ## Architecture 
 
-<img src="./screenshots/architecture.PNG" width="700" height="200">
+<img src="./screenshots/architecture.PNG" width="700" height="230">
+
+The application is hosted on my digital ocean server. For deployment of the React app, Ngnix is used to serve the static files. For deployment of Spring Boot app, the Spring boot app is first packaged into fat JAR, after which a systemd service file is created to run the web app. For database, I have previously set up MySQL, hence we will be using it. 
 
 ## Available Scripts
 
