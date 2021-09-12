@@ -6,6 +6,8 @@ The frontend application is built using React Hooks and ES6 JS. For write-up on 
 
 To view the live site, click [here](http://209.97.175.18/)
 
+Disclaimer: I referenced https://www.youtube.com/watch?v=Kb856Ts8Bws for the Seats UI
+
 <img src="./screenshots/preview.PNG" width="400" height="200">
 
 ## Architecture 
